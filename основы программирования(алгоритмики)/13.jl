@@ -8,7 +8,7 @@ function main13!(r::Robot)
     downright!(r)
 end
 
-function upleft!(r::Robot)
+function upleft!(r::Robot) #идет налево и вверх, расстваляя маркеры, пока не наткнется на границу 
     x, y = 0, 0
     while isborder(r, West) == false && isborder(r, Nord) == false
           move!(r, West)
@@ -20,7 +20,7 @@ function upleft!(r::Robot)
           putmarker!(r)
     end
 
-    while x > 0 && y > 0
+    while x > 0 && y > 0 #возвращает робота в исходное состояние
           move!(r, Ost)
           x -= 1
 
@@ -29,7 +29,7 @@ function upleft!(r::Robot)
     end
 end
 
-function upright!(r::Robot)
+function upright!(r::Robot) #идет наверх и влево, расставляя маркеры, пока не наткнется на границу
     x, y = 0, 0
     while isborder(r, Ost) == false && isborder(r, Nord) == false
           move!(r, Ost)
@@ -41,7 +41,7 @@ function upright!(r::Robot)
           putmarker!(r)
     end
 
-    while x > 0 && y > 0
+    while x > 0 && y > 0 #возвращает робота в исходное состояние 
           move!(r, West)
           x -= 1
 
@@ -50,7 +50,7 @@ function upright!(r::Robot)
     end
 end
 
-function downleft!(r::Robot)
+function downleft!(r::Robot) #идет вниз и влево, расставляя маркеры, пока не наткнется на границу
     x, y = 0, 0
     while isborder(r, West) == false && isborder(r, Sud) == false
           move!(r, West)
@@ -62,7 +62,7 @@ function downleft!(r::Robot)
           putmarker!(r)
     end
 
-    while x > 0 && y > 0
+    while x > 0 && y > 0 #возвращает робота в исходное состояние
           move!(r, Ost)
           x -= 1
 
@@ -71,7 +71,7 @@ function downleft!(r::Robot)
     end
 end
 
-function downright!(r::Robot)
+function downright!(r::Robot) #идет вниз и вправо, расставляя маркеры, пока не наткнется на границу
     x, y = 0, 0
     while isborder(r, Ost) == false && isborder(r, Sud) == false
           move!(r, Ost)
@@ -83,7 +83,7 @@ function downright!(r::Robot)
           putmarker!(r)
     end
 
-    while x > 0 && y > 0
+    while x > 0 && y > 0 #возвращает робота в исходное состояние
           move!(r, West)
           x -= 1
 
